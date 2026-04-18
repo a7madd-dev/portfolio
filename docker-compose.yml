@@ -1,0 +1,28 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: premium-portfolio:latest
+    container_name: premium-portfolio
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      # Password for the /control admin panel. Override in .env or shell.
+      CONTROL_PASSWORD: ${CONTROL_PASSWORD:-admin}
+    volumes:
+      # Bind-mount the content directory so edits made via /control persist
+      # on the host (and stay visible to git) across container restarts.
+      - ./content:/app/content
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q --spider http://localhost:3000/api/projects || exit 1",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

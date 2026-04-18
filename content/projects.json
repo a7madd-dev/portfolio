@@ -1,0 +1,103 @@
+[
+  {
+    "slug": "clinic-system",
+    "title": "Clinic System",
+    "tagline": "Real-time clinical operations, redesigned.",
+    "description": "A medical dashboard unifying queue management, patient records and live exam-room telemetry. Built for clinics scaling past 30k visits/year, with sub-100ms interactions and a keyboard-first workflow for clinicians.",
+    "year": 2025,
+    "role": "Lead designer & engineer",
+    "accent": "#7C5CFF",
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1600&q=80&auto=format&fit=crop",
+      "alt": "Clinic dashboard preview on a laptop",
+      "width": 1600,
+      "height": 1000
+    },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&q=80&auto=format&fit=crop",
+        "alt": "Doctor reviewing a patient queue",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&q=80&auto=format&fit=crop",
+        "alt": "Admin scheduling interface",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1600&q=80&auto=format&fit=crop",
+        "alt": "Patient records close-up",
+        "width": 1600,
+        "height": 1000
+      }
+    ],
+    "tech": [
+      "Next.js",
+      "PostgreSQL",
+      "Socket.io",
+      "Prisma",
+      "Tailwind"
+    ],
+    "links": [
+      {
+        "label": "Live",
+        "href": "https://example.com",
+        "kind": "live"
+      },
+      {
+        "label": "Case study",
+        "href": "https://example.com/case",
+        "kind": "case"
+      }
+    ]
+  },
+  {
+    "slug": "signal-analytics",
+    "title": "Signal Analytics",
+    "tagline": "Product analytics with zero cold-start.",
+    "description": "An analytics product where every query feels instant. Columnar ingestion, materialized rollups and a visual query builder that turns ad-hoc exploration into a first-class activity — without sacrificing depth for power users.",
+    "year": 2024,
+    "role": "Founding engineer",
+    "accent": "#5EEAD4",
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop",
+      "alt": "Dashboard with graphs on a dark interface",
+      "width": 1600,
+      "height": 1000
+    },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80&auto=format&fit=crop",
+        "alt": "Analytics overview",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80&auto=format&fit=crop",
+        "alt": "Funnel visualization",
+        "width": 1600,
+        "height": 1000
+      }
+    ],
+    "tech": [
+      "Next.js",
+      "ClickHouse",
+      "tRPC",
+      "D3"
+    ],
+    "links": [
+      {
+        "label": "Live",
+        "href": "https://example.com",
+        "kind": "live"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/example",
+        "kind": "repo"
+      }
+    ]
+  }
+]
