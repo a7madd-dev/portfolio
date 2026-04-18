@@ -1,0 +1,22 @@
+{
+  "email": "a7madd5111@gmail.com",
+  "phone": "+201062312347",
+  "location": "",
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/a7madd-dev",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/a7madd/",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://x.com/a7madd944",
+      "kind": "twitter"
+    }
+  ]
+}

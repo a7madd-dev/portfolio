@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "projectsCompleted": 38,
+    "yearsExperience": 6,
+    "clients": 14,
+    "technologies": 24
+  },
+  "skills": [
+    { "label": "React / Next.js", "value": 96 },
+    { "label": "TypeScript", "value": 92 },
+    { "label": "UI engineering", "value": 90 },
+    { "label": "Node & APIs", "value": 84 },
+    { "label": "Databases", "value": 78 },
+    { "label": "DevOps / CI", "value": 70 }
+  ],
+  "categories": [
+    { "label": "Web apps", "value": 16, "color": "#7C5CFF" },
+    { "label": "Dashboards", "value": 11, "color": "#5EEAD4" },
+    { "label": "E-commerce", "value": 6, "color": "#F6C177" },
+    { "label": "Internal tools", "value": 5, "color": "#F472B6" }
+  ],
+  "timeline": [
+    { "label": "'20", "value": 3 },
+    { "label": "'21", "value": 5 },
+    { "label": "'22", "value": 8 },
+    { "label": "'23", "value": 10 },
+    { "label": "'24", "value": 13 },
+    { "label": "'25", "value": 16 }
+  ]
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getSeo } from "@/lib/seoStore";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,11 +15,41 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Ahmad Yousef — Fullstack Developer",
-  description:
-    "A portfolio of high-performance, visually refined web products by Ahmad Yousef.",
-};
+// Metadata is generated from content/seo.json, editable via the /control panel.
+// Next.js picks this up at render time, and /api/seo revalidates the layout
+// after each save so the next page view reflects the change.
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeo();
+  const siteUrl = seo.siteUrl?.trim() || undefined;
+  const ogImage = seo.ogImage?.trim() || undefined;
+
+  return {
+    metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+    title: seo.titleTemplate
+      ? { default: seo.title, template: seo.titleTemplate }
+      : seo.title,
+    description: seo.description,
+    keywords: seo.keywords.length > 0 ? seo.keywords : undefined,
+    authors: seo.authorName ? [{ name: seo.authorName }] : undefined,
+    creator: seo.authorName || undefined,
+    openGraph: {
+      type: "website",
+      title: seo.title,
+      description: seo.description,
+      url: siteUrl,
+      siteName: seo.authorName || seo.title,
+      images: ogImage ? [{ url: ogImage }] : undefined,
+    },
+    twitter: {
+      card: ogImage ? "summary_large_image" : "summary",
+      title: seo.title,
+      description: seo.description,
+      creator: seo.twitterHandle || undefined,
+      images: ogImage ? [ogImage] : undefined,
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default function RootLayout({
   children,

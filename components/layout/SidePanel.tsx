@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "@/styles/motion";
+import type { Contact } from "@/types/contact";
 import SideNav from "./SideNav";
 import SocialLinks from "./SocialLinks";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -13,7 +14,7 @@ import MagneticButton from "@/components/ui/MagneticButton";
  * The animated gradient underneath uses background-position drift rather
  * than compositor-expensive blur animation — cheap on the GPU.
  */
-export default function SidePanel() {
+export default function SidePanel({ contact }: { contact: Contact }) {
   return (
     <aside className="noise-overlay relative flex h-full flex-col justify-between overflow-hidden">
       <AmbientGradient />
@@ -90,7 +91,7 @@ export default function SidePanel() {
             </svg>
           </MagneticButton>
 
-          <SocialLinks />
+          <SocialLinks contact={contact} />
         </motion.div>
       </motion.div>
     </aside>

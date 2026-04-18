@@ -1,20 +1,35 @@
-const socials = [
-  { label: "GitHub", href: "https://github.com", external: true },
-  { label: "LinkedIn", href: "https://linkedin.com", external: true },
-  { label: "Email", href: "mailto:a7madd5111@gmail.com", external: false },
-] as const;
+import type { Contact, SocialLink } from "@/types/contact";
 
-export default function SocialLinks() {
+type Props = {
+  contact: Contact;
+};
+
+/**
+ * Rendered in the side panel as a text-only list. The footer uses its own
+ * icon-driven treatment — this is the minimalist variant that fits in the
+ * narrow identity column.
+ */
+export default function SocialLinks({ contact }: Props) {
+  const items: Array<{ label: string; href: string; external: boolean }> = [];
+
+  for (const s of contact.socials) {
+    items.push({ label: s.label, href: s.href, external: true });
+  }
+  if (contact.email) {
+    items.push({
+      label: "Email",
+      href: `mailto:${contact.email}`,
+      external: false,
+    });
+  }
+
+  if (items.length === 0) return null;
+
   return (
-    <ul className="flex items-center gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-dim">
-      {socials.map((s, i) => (
-        <li key={s.label} className="flex items-center gap-x-5">
-          {i > 0 && (
-            <span
-              aria-hidden
-              className="h-3 w-px bg-hairline-strong"
-            />
-          )}
+    <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-dim">
+      {items.map((s, i) => (
+        <li key={`${s.label}-${i}`} className="flex items-center gap-x-5">
+          {i > 0 && <span aria-hidden className="h-3 w-px bg-hairline-strong" />}
           <a
             href={s.href}
             target={s.external ? "_blank" : undefined}
@@ -34,3 +49,5 @@ export default function SocialLinks() {
     </ul>
   );
 }
+
+export type { SocialLink };
